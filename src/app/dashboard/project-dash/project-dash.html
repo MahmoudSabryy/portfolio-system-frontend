@@ -1,0 +1,63 @@
+<section id="projects1" class="section-card">
+  <h2>Projects</h2>
+  <div class="actions-row">
+    <button class="action-btn edit-btn" (click)="changeIsActiveProject()">Edit</button>
+    <button class="action-btn add-btn" (click)="isActiveAddbtn = true">Add</button>
+  </div>
+  <div class="edit-form" *ngIf="isActiveproject == true">
+    @for (p of ProjectData?.projectSection; let i = $index; track i) {
+    <label style="font-size: 40px">Project {{ i + 1 }}</label>
+    <input type="hidden" #projectId [value]="p.id" />
+
+    <label for="#projectName"> project Name</label>
+
+    <input type="text" #projectName placeholder="{{ p.projectName }}" />
+
+    <label for="#projectDesc"> project Desc</label>
+
+    <input type="text" #projectDesc placeholder="{{ p.projectDesc }}" />
+
+    <label for="#projectTools"> project Tools</label>
+
+    <input type="text" #projectTools placeholder="{{ p.toolsData }}" />
+
+    <label for="#projectLink"> project Link</label>
+
+    <input type="text" #projectLink placeholder="{{ p.link }}" />
+
+    <br />
+    <br />
+    <div class="project-actions">
+      <button class="action-btn delete-btn" (click)="deleteProject(p.id)">Delete</button>
+    </div>
+    }
+
+    <div class="popup-actions">
+      <button (click)="isActiveproject = false" class="edit-btn">Cancel</button>
+      <button type="button" (click)="getProjectDataFromInputs()" class="btn save-btn">Save</button>
+    </div>
+  </div>
+</section>
+
+<!-- Adding project Form -->
+<form class="edit-form" [class.d-none]="isActiveAddbtn == false">
+  <h3>Add New Project</h3>
+
+  <label>Project Name</label>
+  <input type="text" #newProjectName />
+
+  <label>Project Description</label>
+  <input type="text" #newProjectDesc />
+
+  <label>Tools</label>
+  <input type="text" #newProjectTools />
+
+  <label>Project Link</label>
+  <input type="text" #newProjectLink />
+
+  <div class="popup-actions">
+    <button class="btn cancel-btn" (click)="isActiveAddbtn = false">Cancel</button>
+
+    <button class="btn save-btn" (click)="addNewProject()">Save</button>
+  </div>
+</form>

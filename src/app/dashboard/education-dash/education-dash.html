@@ -1,0 +1,45 @@
+<section id="education" class="section-card">
+  <h2 class="section-title">Education Section</h2>
+  <form class="edit-form" #myFormEducation *ngIf="isActiveEducation == true">
+    <label>Title (Part 1)</label>
+    <input
+      type="text"
+      #EducationTitle1
+      placeholder="{{ EducationData?.educationSection?.section?.first }}"
+    />
+
+    <label>Title (Part 2)</label>
+    <input
+      type="text"
+      #EducationTitle2
+      placeholder="{{ EducationData?.educationSection?.section?.second }}"
+    />
+
+    <label>Role (Part 1)</label>
+    <input
+      type="text"
+      #EducationTitle3
+      placeholder="{{ EducationData?.educationSection?.section?.third }}"
+    />
+
+    <div class="popup-actions">
+      <button (click)="closeBtnEducation()" class="btn cancel-btn">Cancel</button>
+      <button
+        type="button"
+        (click)="getEducationDataFromInput()"
+        (click)="updateEducationData()"
+        (click)="closeBtnEducation()"
+        class="btn save-btn"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+  <button
+    class="edit-btn"
+    (click)="changeIsActiveEducation()"
+    [class.d-none]="isActiveEducation == true"
+  >
+    Edit
+  </button>
+</section>

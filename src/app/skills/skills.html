@@ -1,0 +1,12 @@
+<section id="skills" class="skills">
+  <h2 class="section-title">Technical Skills</h2>
+
+  <div class="skills-container">
+    @for (s of skills; track $index) {
+    <div class="skill">
+      <h2>{{ s.name }}</h2>
+      <img [src]="`http://localhost:3000/uploads/` + s.icon" [alt]="s.name" [title]="s.name" />
+    </div>
+    }
+  </div>
+</section>

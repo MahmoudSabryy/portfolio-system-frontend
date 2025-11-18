@@ -1,0 +1,14 @@
+<!-- Experience / Training Section -->
+
+<section id="training" class="training">
+  <h2 class="section-title">Experience & Training</h2>
+  <div class="training-container">
+    @for (i of data?.experienceSection; track $index) {
+    <div class="training-item">
+      <h3>{{ i?.section?.first }}</h3>
+      <span class="training-date">{{ i?.section?.second }}</span>
+      <p>{{ i?.section?.third }}</p>
+    </div>
+    }
+  </div>
+</section>

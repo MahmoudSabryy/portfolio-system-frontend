@@ -1,0 +1,1210 @@
+/* You can add global styles to this file, and also import other style files */
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #0b0b0d 0%, #000 100%);
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== STAR BACKGROUND ===== */
+/* ===== STAR BACKGROUND ===== */
+/* ===== STAR BACKGROUND ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  z-index: -2;
+
+  /* نجوم أكثر وحجمها أكبر + ألوان متنوعة */
+  background-image: radial-gradient(3px 3px at 50px 60px, #ffffff, transparent),
+    radial-gradient(3px 3px at 100px 250px, #00e6ff, transparent),
+    radial-gradient(3px 3px at 200px 400px, #ffffff, transparent),
+    radial-gradient(3px 3px at 300px 150px, #00bcd4, transparent),
+    radial-gradient(3px 3px at 450px 500px, #ffffff, transparent),
+    radial-gradient(3px 3px at 600px 350px, #00e6ff, transparent),
+    radial-gradient(3px 3px at 800px 200px, #ffffff, transparent),
+    radial-gradient(3px 3px at 950px 650px, #00e6ff, transparent),
+    radial-gradient(3px 3px at 1100px 300px, #ffffff, transparent),
+    radial-gradient(3px 3px at 1300px 500px, #00bcd4, transparent),
+    radial-gradient(3px 3px at 1500px 700px, #ffffff, transparent),
+    radial-gradient(3px 3px at 1700px 400px, #00e6ff, transparent),
+    radial-gradient(3px 3px at 1900px 800px, #ffffff, transparent),
+    radial-gradient(3px 3px at 2100px 600px, #00bcd4, transparent),
+    radial-gradient(3px 3px at 2300px 900px, #ffffff, transparent),
+    radial-gradient(3px 3px at 2500px 300px, #00e6ff, transparent),
+    radial-gradient(3px 3px at 2700px 700px, #ffffff, transparent),
+    radial-gradient(3px 3px at 2900px 400px, #00bcd4, transparent);
+
+  background-size: 1000px 1000px;
+  animation: moveStars 180s linear infinite, twinkle 4s ease-in-out infinite;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 6px #00e6ff);
+}
+
+/* ===== STAR BACKGROUND LAYER 2 ===== */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  z-index: -3;
+
+  background-image: radial-gradient(2px 2px at 30px 50px, #ffffff, transparent),
+    radial-gradient(2px 2px at 180px 250px, #00e6ff, transparent),
+    radial-gradient(2px 2px at 500px 100px, #ffffff, transparent),
+    radial-gradient(2px 2px at 900px 400px, #00e6ff, transparent),
+    radial-gradient(2px 2px at 1300px 600px, #ffffff, transparent),
+    radial-gradient(2px 2px at 1600px 300px, #00e6ff, transparent),
+    radial-gradient(2px 2px at 1900px 500px, #ffffff, transparent);
+
+  background-size: 800px 800px;
+  animation: moveStars2 220s linear infinite, twinkle 6s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+/* ===== Animations ===== */
+@keyframes moveStars {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-1200px);
+  }
+}
+
+@keyframes moveStars2 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-800px);
+  }
+}
+
+/* لمعان النجوم */
+@keyframes twinkle {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+/* ===== SHOOTING STARS ===== */
+.shooting-star {
+  position: fixed;
+  top: -10px;
+  left: 50%;
+  width: 3px;
+  height: 80px;
+  background: linear-gradient(180deg, #00e6ff, transparent);
+  border-radius: 50%;
+  opacity: 0;
+  transform: rotate(45deg);
+  animation: shoot 4s ease-in-out infinite;
+}
+
+@keyframes shoot {
+  0% {
+    opacity: 0;
+    transform: translate(-200px, -200px) rotate(45deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(800px, 800px) rotate(45deg);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ===== HERO + NAVBAR ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 20, 30, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  flex-direction: row-reverse; /* يعكس الاتجاه */
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00e6ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.nav-links a:hover {
+  color: #00e6ff;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 8%;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid #00e6ff;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.hero h2 {
+  font-size: 2rem;
+}
+.hero h2 span {
+  color: #00e6ff;
+}
+.hero p {
+  color: #bdbdbd;
+  margin: 10px 0 20px;
+}
+
+.btn {
+  border: 2px solid #00e6ff;
+  color: #00e6ff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #00e6ff;
+  color: #000;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #999;
+}
+
+/* ===== SHOOTING STAR INSTANCES ===== */
+.shooting-star:nth-child(1) {
+  animation-delay: 3s;
+  left: 10%;
+}
+.shooting-star:nth-child(2) {
+  animation-delay: 8s;
+  left: 30%;
+}
+.shooting-star:nth-child(3) {
+  animation-delay: 13s;
+  left: 60%;
+}
+.shooting-star:nth-child(4) {
+  animation-delay: 18s;
+  left: 80%;
+}
+
+/* ===== GENERAL SECTIONS ===== */
+section {
+  padding: 100px 8%;
+  text-align: center;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #00e6ff;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #00e6ff;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+/* ===== ABOUT ===== */
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+.about-content p + p {
+  margin-top: 15px;
+}
+
+/* ===== EDUCATION ===== */
+.education-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+.edu-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px 25px;
+  border-left: 4px solid #00e6ff;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 10px rgba(0, 230, 255, 0.1);
+  transition: 0.3s;
+}
+.edu-item:hover {
+  box-shadow: 0 0 25px rgba(0, 230, 255, 0.3);
+}
+.edu-date {
+  font-size: 0.9rem;
+  color: #00e6ff;
+}
+
+/* ===== SKILLS ===== */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.skill {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 230, 255, 0.05);
+}
+.skill:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 230, 255, 0.4);
+}
+
+.skill img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* ===== TRAINING ===== */
+.training-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+.training-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 4px solid #00bcd4;
+  padding: 20px 25px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.training-item:hover {
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+}
+.training-date {
+  color: #00bcd4;
+  font-size: 0.9rem;
+}
+
+/* ===== PROJECTS ===== */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0, 230, 255, 0.1);
+  transition: 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0, 230, 255, 0.3);
+}
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.project-card h3 {
+  color: #00e6ff;
+  margin: 15px 20px 10px;
+}
+.project-card p {
+  margin: 0 20px 15px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* ===== CERTIFICATES ===== */
+.certificates ul {
+  list-style: none;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  color: #ccc;
+}
+.certificates li {
+  margin: 12px 0;
+  padding-left: 20px;
+  position: relative;
+}
+.certificates li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #00e6ff;
+}
+
+/* ===== CONTACT ===== */
+.contact p {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.contact .btn {
+  background: transparent;
+  border: 2px solid #00e6ff;
+  color: #00e6ff;
+  border-radius: 30px;
+  padding: 10px 25px;
+  transition: 0.3s;
+}
+.contact .btn:hover {
+  background: #00e6ff;
+  color: #000;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  color: #999;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== SCROLL & RESPONSIVE ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+  section {
+    padding: 80px 5%;
+  }
+}
+.hero-content {
+  max-width: 850px;
+  text-align: center;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.hero h2 span {
+  color: #00e6ff;
+  text-shadow: 0 0 10px rgba(0, 230, 255, 0.7);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #bbb;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
+}
+
+/* زر تحميل الـ CV */
+.hero .btn {
+  display: inline-block;
+  border: 2px solid #00e6ff;
+  color: #00e6ff;
+  padding: 12px 30px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 230, 255, 0.2);
+}
+
+.hero .btn:hover {
+  background: #00e6ff;
+  color: #000;
+  box-shadow: 0 0 25px rgba(0, 230, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+/* أنيميشن دخول سلس */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===== Typewriter Effect ===== */
+.typewriter {
+  overflow: hidden; /* يخفي النص الزايد */
+  border-right: 3px solid #00bfff; /* مؤشر الكتابة */
+  white-space: nowrap;
+  letter-spacing: 2px;
+  animation: typing 3s steps(30, end), blink-caret 0.7s step-end infinite;
+  display: inline-block;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.typewriter span {
+  color: #00bfff;
+  font-weight: 600;
+}
+
+/* حركة الكتابة */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* وميض مؤشر الكتابة */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #00bfff;
+  }
+}
+.phone-line {
+  font-size: 1.2rem;
+  color: #00e6ff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 230, 255, 0.6);
+}
+.phone-line a {
+  color: #00e6ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.phone-line a:hover {
+  text-shadow: 0 0 20px rgba(0, 230, 255, 0.8);
+}
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 30px;
+  justify-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #00e6ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  animation: glowPulse 2.5s infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px #00e6ff, 0 0 10px #00bcd4;
+  }
+  100% {
+    text-shadow: 0 0 25px #00e6ff, 0 0 45px #00bcd4;
+  }
+}
+
+/* ===== PROJECT CARD HOVER EFFECT ===== */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 230, 255, 0.1);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
+/* الطبقة اللي فيها الزر */
+.project-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* الزر نفسه */
+.project-card .overlay a {
+  background: #00e6ff;
+  color: #000;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.project-card .overlay a:hover {
+  background: #00bcd4;
+  transform: scale(1.05);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== BACK TO TOP BUTTON ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #00e6ff, #0077ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0, 230, 255, 0.35);
+  z-index: 1000;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(0, 230, 255, 0.6);
+}
+
+/* أيقونة السهم */
+.back-to-top svg {
+  width: 26px;
+  height: 26px;
+  stroke: #fff;
+  transition: stroke 0.3s ease;
+}
+
+.back-to-top:hover svg {
+  stroke: #000;
+}
+
+/* حركة الطفو */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* 🏠 تنسيق قسم الـ hero */
+.hero {
+  display: flex;
+  justify-content: center; /* يوسّط الصورة أفقيًا */
+  align-items: center; /* يوسّطها رأسيًا */
+  text-align: center;
+  min-height: 100vh; /* علشان تبقى في نص الشاشة */
+}
+
+/* 🧱 الحاوية اللي فيها الصورة */
+.left {
+  position: relative;
+  display: inline-block;
+}
+
+/* 🖼️ الصورة */
+.profile-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 📸 زرار الكاميرا فوق الصورة */
+.update-btn {
+  position: absolute;
+  top: 35%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+/* 💡 الزرار يظهر فقط لما الماوس يكون فوق الصورة */
+.profile-img:hover + .update-btn {
+  opacity: 1;
+}
+
+.profile-img:hover {
+  filter: brightness(70%);
+}
+
+.update-btn:hover {
+  background: #00bcd4;
+  color: #000;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+/* ===== EDIT POPUP (PROFILE FORM) ===== */
+.edit-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 25px;
+  background: transparent;
+  border: 2px solid #00e6ff;
+  color: #00e6ff;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 230, 255, 0.3);
+}
+.edit-btn:hover {
+  background: #00e6ff;
+  color: #000;
+  box-shadow: 0 0 25px rgba(0, 230, 255, 0.6);
+}
+
+/* ===== Popup Overlay ===== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999999999999;
+  backdrop-filter: blur(8px);
+}
+
+/* استخدم :target لإظهار النافذة */
+#edit-popup:target {
+  display: flex;
+}
+
+/* ===== Popup Content ===== */
+.popup-content {
+  background: rgba(20, 25, 35, 0.95);
+  border: 1px solid rgba(0, 230, 255, 0.3);
+  color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 25px rgba(0, 230, 255, 0.4);
+  animation: popupFade 0.3s ease-in-out;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.popup-content h2 {
+  text-align: center;
+  color: #00e6ff;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  text-shadow: 0 0 10px rgba(0, 230, 255, 0.5);
+}
+
+.edit-form label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 500;
+  color: #00e6ff;
+  text-shadow: 0 0 5px rgba(0, 230, 255, 0.4);
+}
+
+.edit-form input,
+.edit-form textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 15px;
+  box-shadow: inset 0 0 5px rgba(0, 230, 255, 0.3);
+}
+
+.edit-form textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.popup-actions .btn {
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: 0.3s;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 2px solid #555;
+  color: #ccc;
+}
+.cancel-btn:hover {
+  background: #333;
+}
+
+.save-btn {
+  background: #00e6ff;
+  color: #000;
+  border: none;
+}
+.save-btn:hover {
+  background: #00bcd4;
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*#######################################*/
+/* ===== Hero Section (Home) ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #fff;
+  background: radial-gradient(circle at top, #0b0b0d 0%, #000 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 60px 20px;
+}
+
+/* ===== Profile Image & Update Button ===== */
+.profile-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #1e90ff;
+  box-shadow: 0 0 25px rgba(30, 144, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(30, 144, 255, 0.6);
+}
+
+/* ===== Update (📸) Button ===== */
+.update-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+}
+
+.update-btn:hover {
+  background-color: #0074e4;
+  transform: scale(1.1);
+}
+
+/* إخفاء input الخاص بالصورة */
+#profileInput {
+  display: none;
+}
+
+/* ===== Text and Titles ===== */
+.hero .title-1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero .typewriter {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #1e90ff;
+  margin-bottom: 15px;
+}
+
+.hero .title-Text {
+  max-width: 600px;
+  margin: 0 auto 25px;
+  line-height: 1.6;
+  color: #d0d0d0;
+}
+
+/* ===== Buttons ===== */
+.hero .btn {
+  display: inline-block;
+  background: #1e90ff;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background: #0074e4;
+  transform: translateY(-2px);
+}
+
+/* ===== Edit Button ===== */
+.edit-btn {
+  display: inline-block;
+  margin-top: 12px;
+  color: #1e90ff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.edit-btn:hover {
+  color: #0074e4;
+}
+
+/* ===== Popup Styling ===== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 17, 17, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.popup-overlay:target {
+  display: flex;
+}
+
+.popup-content {
+  background: #1c1f22;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+  color: #1e90ff;
+}
+
+.popup-content label {
+  display: block;
+  margin: 8px 0 4px;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #0f1111;
+  color: white;
+  outline: none;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancel-btn {
+  background: #555 !important;
+}
+
+.cancel-btn:hover {
+  background: #333 !important;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+body {
+  background: #000 !important;
+  color: #fff;
+}
+
+.d-none {
+  display: none;
+}
+
+#profileInput {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* شكل الزرار الأساسي */
+.btn-style {
+  padding: 8px 25px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5); /* نفس اللمعة */
+}
+
+/* زرار Edit */
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 162, 255, 0.7);
+}
+
+.edit-btn:hover {
+  background-color: #0069d9;
+  transform: scale(1.05);
+}
+
+/* زرار Add نفس الشكل لكن أخضر */
+.add-btn {
+  background-color: #28a745;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.add-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* عشان الاتنين يتظبطوا جنب بعض */
+.actions-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+.action-btn {
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.edit-btn {
+  background: #333;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background: #555;
+}
+.add-btn {
+  background: #4caf50;
+  color: #fff;
+}
+
+.add-btn:hover {
+  background: #45a049;
+}
+.action-btn {
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.delete-btn {
+  background: #d9534f; /* Red */
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #c9302c;
+}
+
+.project-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

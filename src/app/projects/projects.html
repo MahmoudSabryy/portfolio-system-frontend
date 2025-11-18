@@ -1,0 +1,19 @@
+<!-- Projects Section -->
+<section id="projects" class="projects">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-container">
+    @for (p of data?.projectSection; track $index) {
+    <div class="project-card">
+      <h3>{{ p.projectName }}</h3>
+      <p>{{ p.projectDesc }}</p>
+      <p>
+        Tools:<strong>{{ p.toolsData }}</strong>
+      </p>
+      <div class="overlay">
+        <a target="_blank">{{ p.link }}</a>
+      </div>
+    </div>
+    }
+  </div>
+</section>

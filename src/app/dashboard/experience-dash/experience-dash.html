@@ -1,0 +1,59 @@
+<section id="projects1" class="section-card">
+  <h2>Experience</h2>
+  <div class="actions-row">
+    <button class="action-btn edit-btn" (click)="isActiveEdit = true">Edit</button>
+    <button class="action-btn add-btn" (click)="isActiveAdd = true">Add</button>
+  </div>
+  <form class="edit-form" #myFormproject *ngIf="isActiveEdit == true">
+    @for (p of ExperienceData?.experienceSection; let i = $index; track i) {
+    <label style="font-size: 40px">Experience {{ i + 1 }}</label>
+    <input type="hidden" #Experience1 [value]="p.ides" />
+
+    <label for="#Experience2"> Experience sec 1</label>
+
+    <input type="text" #Experience2 placeholder="{{ p.section.first }}" />
+
+    <label for="#Experience3"> Experience sec 2</label>
+
+    <input type="text" #Experience3 placeholder="{{ p.section.second }}" />
+
+    <label for="#Experience4"> Experience sec 3</label>
+
+    <input type="text" #Experience4 placeholder="{{ p.section.third }}" />
+
+    <br />
+    <br />
+    <div class="project-actions">
+      <button class="action-btn delete-btn" (click)="deleteExp(p.ides)">Delete</button>
+    </div>
+    }
+
+    <div class="popup-actions">
+      <button class="edit-btn">Cancel</button>
+      <button type="button" class="btn save-btn" (click)="getProjectDataFromInputs()">Save</button>
+    </div>
+  </form>
+</section>
+
+<!-- Adding project Form -->
+<form class="edit-form">
+  <h3>Add New Experience</h3>
+
+  <label>Experience Name</label>
+  <input type="text" #newProjectName />
+
+  <label>Project Description</label>
+  <input type="text" #newProjectDesc />
+
+  <label>Tools</label>
+  <input type="text" #newProjectTools />
+
+  <label>Project Link</label>
+  <input type="text" #newProjectLink />
+
+  <div class="popup-actions">
+    <button class="btn cancel-btn">Cancel</button>
+
+    <button class="btn save-btn">Save</button>
+  </div>
+</form>

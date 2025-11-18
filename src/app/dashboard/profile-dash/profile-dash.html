@@ -1,0 +1,89 @@
+<section id="home" class="section-card dashboard-card">
+  <h2 class="section-title">Profile Section</h2>
+
+  <form class="edit-form" #myFormHome *ngIf="isActiveProfile == true">
+    <div class="form-group">
+      <label>Title (Part 1)</label>
+      <input
+        #titlep1
+        type="text"
+        placeholder="{{ ProfileData?.profileSection?.section1?.first }}"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Title (Part 2)</label>
+      <input
+        #titlep2
+        type="text"
+        placeholder="{{ ProfileData?.profileSection?.section1?.second }}"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Role (Part 1)</label>
+      <input
+        #titlep3
+        type="text"
+        placeholder="{{ ProfileData?.profileSection?.section2?.first }}"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Role (Part 2)</label>
+      <input
+        #titlep4
+        type="text"
+        placeholder="{{ ProfileData?.profileSection?.section2?.second }}"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Description (Part 1)</label>
+      <input
+        #titlep5
+        type="text"
+        placeholder="{{ ProfileData?.profileSection?.section3?.first }}"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Highlight (Part 2)</label>
+      <input
+        #titlep6
+        type="text"
+        placeholder="{{ ProfileData?.profileSection?.section3?.second }}"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Extra Description</label>
+      <input
+        #titlep7
+        type="text"
+        placeholder="{{ ProfileData?.profileSection?.section3?.third }}"
+      />
+    </div>
+
+    <div class="popup-actions">
+      <button (click)="closeBtnProfile()" type="button" class="btn cancel-btn">Cancel</button>
+      <button
+        type="button"
+        class="btn save-btn"
+        (click)="getProfileDataFromInputs()"
+        (click)="updateProfileData()"
+        (click)="closeBtnProfile()"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+
+  <button
+    class="edit-btn"
+    (click)="isActiveProfile = true"
+    [class.d-none]="isActiveProfile == true"
+  >
+    Edit
+  </button>
+</section>

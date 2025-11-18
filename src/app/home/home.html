@@ -1,0 +1,29 @@
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="left">
+      <!-- صورة البروفايل -->
+      <div class="profile-container">
+        <img [src]="data?.profileSection?.image" alt="Profile Picture" class="profile-img" />
+        <button (click)="updateImage()" class="edit-btn" title="Update Image">📸</button>
+        <input #imageInput type="file" id="profileInput" accept="image/*" />
+      </div>
+
+      <h2 class="title-1">
+        {{ data?.profileSection?.section1?.first }}
+        <span>{{ data?.profileSection?.section1?.second }}</span>
+      </h2>
+      <h3 class="typewriter">
+        {{ data?.profileSection?.section2?.first }}
+        <span>{{ data?.profileSection?.section2?.second }}</span>
+      </h3>
+      <p class="title-Text">
+        {{ data?.profileSection?.section3?.first
+        }}<strong>{{ data?.profileSection?.section3?.second }}</strong
+        >{{ data?.profileSection?.section3?.third }}
+      </p>
+
+      <a href="" class="btn" download> Download My CV </a>
+    </div>
+  </div>
+</section>

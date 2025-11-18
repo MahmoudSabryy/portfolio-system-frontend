@@ -1,0 +1,93 @@
+.section-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  border-left: 6px solid #6a4cfe;
+}
+
+.section-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #00eaff;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #6a4cfe;
+  box-shadow: 0 0 5px rgba(106, 76, 254, 0.3);
+}
+
+.edit-btn {
+  padding: 10px 20px;
+  background: #6a4cfe;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.edit-btn:hover {
+  background: #583dee;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.save-btn {
+  background: #6a4cfe;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background: #583dee;
+}
+
+.cancel-btn {
+  background: #f2f2f2;
+  color: #444;
+}
+
+.cancel-btn:hover {
+  background: #e0e0e0;
+}

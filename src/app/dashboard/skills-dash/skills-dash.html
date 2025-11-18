@@ -1,0 +1,39 @@
+<section id="skills-dashboard" class="dashboard-section">
+  <h2 class="section-title">Skills</h2>
+
+  <!-- Top Actions -->
+  <div class="top-actions">
+    <button class="btn neon-btn" (click)="isActiveAdd = true">Add Skill</button>
+  </div>
+
+  <!-- Add Skill Form -->
+  <form class="form-card" *ngIf="isActiveAdd == true">
+    <h3>Add New Skill</h3>
+
+    <label>Skill Name</label>
+    <input type="text" #mySkillName placeholder="Enter skill name" />
+
+    <label>Icon</label>
+    <input type="file" #mySkillIcon (change)="onFileSelected($event)" />
+
+    <div class="bottom-actions">
+      <button class="btn cancel-btn" type="button" (click)="isActiveAdd = false">Cancel</button>
+      <button class="btn neon-btn" type="button" (click)="addSkill()">Save</button>
+    </div>
+  </form>
+
+  <!-- Skills Grid -->
+  <div class="list-wrapper grid-3">
+    <div class="item-card skill-card" *ngFor="let skill of skillsData">
+      <h3 class="item-title">{{ skill.name }}</h3>
+
+      <img class="skill-icon" [src]="'http://localhost:3000/uploads/' + skill.icon" alt="icon" />
+
+      <div class="row-actions center">
+        <button class="btn delete-btn" type="button" (click)="deleteSkill(skill.ids)">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
