@@ -4,7 +4,6 @@ import { About } from './about/about';
 import { Education } from './education/education';
 import { Skills } from './skills/skills';
 import { Projects } from './projects/projects';
-import { Certfications } from './certfications/certfications';
 import { Contact } from './contact/contact';
 import { Experience } from './experience/experience';
 import { Dashboard } from './dashboard/dashboard';
