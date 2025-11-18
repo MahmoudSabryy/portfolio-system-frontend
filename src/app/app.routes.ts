@@ -20,7 +20,6 @@ export const routes: Routes = [
   { path: 'education', component: Education, title: 'Education' },
   { path: 'skills', component: Skills, title: 'Skills' },
   { path: 'projects', component: Projects, title: 'Projects' },
-  { path: 'certfications', component: Certfications, title: 'Certfications' },
   { path: 'contact', component: Contact, title: 'Contact' },
   { path: 'experience', component: Experience, title: 'Experience' },
   { path: 'dashboard', component: Dashboard, title: 'Admin Dashboard' },
